@@ -1,0 +1,20 @@
+<script type="text/x-handlebars" data-template-name="application">
+  <h1>Eat It!</h1>
+  {{outlet}}
+</script>
+
+<script type="text/x-handlebars" data-template-name="restraunts">
+  <form>
+    <input type="submit" value="Find!" {{action "findRestraunt"}}>
+  </form>
+  <ul>
+    {{#each restraunt in controller}}
+      <li>
+        {{#if restraunt.winner}}
+          <span>WINNER</span>
+        {{/if}}
+        {{restraunt.name}}
+      </li>
+    {{/each}}
+  </ul>
+</script>
